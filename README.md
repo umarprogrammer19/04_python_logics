@@ -48,7 +48,7 @@ The `homework_projects` directory covers **essential Python topics** such as:
 1. Clone this repository:
    
    ```sh  
-   git clone https://github.com/umarprogrammer19/Assignment-4.git
+   git clone https://github.com/umarprogrammer19/04_python_logics.git
    cd Python-Projects  
    ```  
 3. **(Recommended)** Set up a virtual environment:
