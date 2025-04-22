@@ -7,6 +7,7 @@ class Student:
     def display(self):
         print(f"Name: {self.name}, Marks: {self.marks}")
 
+
 # 2. Using `cls`
 class Counter:
     count = 0
@@ -18,6 +19,7 @@ class Counter:
     def display_count(cls):
         print(f"Number of objects created: {cls.count}")
 
+
 # 3. Public Variables and Methods
 class Car:
     def __init__(self, brand):
@@ -25,6 +27,7 @@ class Car:
 
     def start(self):
         print(f"{self.brand} car is starting.")
+
 
 # 4. Class Variables and Class Methods
 class Bank:
@@ -34,19 +37,22 @@ class Bank:
     def change_bank_name(cls, name):
         cls.bank_name = name
 
+
 # 5. Static Variables and Static Methods
 class MathUtils:
     @staticmethod
     def add(a, b):
         return a + b
 
+
 # 6. Constructors and Destructors
 class Logger:
     def __init__(self):
         print("Logger object created.")
-    
+
     def __del__(self):
         print("Logger object destroyed.")
+
 
 # 7. Access Modifiers: Public, Private, and Protected
 class Employee:
@@ -55,23 +61,28 @@ class Employee:
         self._salary = salary  # Protected
         self.__ssn = ssn  # Private
 
+
 # 8. The `super()` Function
 class Person:
     def __init__(self, name):
         self.name = name
+
 
 class Teacher(Person):
     def __init__(self, name, subject):
         super().__init__(name)
         self.subject = subject
 
+
 # 9. Abstract Classes and Methods
 from abc import ABC, abstractmethod
+
 
 class Shape(ABC):
     @abstractmethod
     def area(self):
         pass
+
 
 class Rectangle(Shape):
     def __init__(self, width, height):
@@ -80,6 +91,7 @@ class Rectangle(Shape):
 
     def area(self):
         return self.width * self.height
+
 
 # 10. Instance Methods
 class Dog:
@@ -90,6 +102,7 @@ class Dog:
     def bark(self):
         print(f"{self.name} is barking!")
 
+
 # 11. Class Methods
 class Book:
     total_books = 0
@@ -98,18 +111,21 @@ class Book:
     def increment_book_count(cls):
         cls.total_books += 1
 
+
 # 12. Static Methods
 class TemperatureConverter:
     @staticmethod
     def celsius_to_fahrenheit(c):
-        return (c * 9/5) + 32
+        return (c * 9 / 5) + 32
+
 
 # 13. Composition
 class Engine:
     def start(self):
         print("Engine started.")
 
-class CarWithEngine:  # Renamed to avoid conflict with the previous 'Car' class
+
+class CarWithEngine:
     def __init__(self, engine):
         self.engine = engine
 
@@ -117,51 +133,63 @@ class CarWithEngine:  # Renamed to avoid conflict with the previous 'Car' class
         self.engine.start()
         print("Car is running.")
 
+
 # 14. Aggregation
 class Department:
     def __init__(self, name):
         self.name = name
 
-class EmployeeWithDepartment:  # Renamed to avoid conflict with the previous 'Employee' class
+
+class EmployeeWithDepartment:
     def __init__(self, name, department):
         self.name = name
         self.department = department
+
 
 # 15. Method Resolution Order (MRO) and Diamond Inheritance
 class A:
     def show(self):
         print("Class A")
 
+
 class B(A):
     def show(self):
         print("Class B")
+
 
 class C(A):
     def show(self):
         print("Class C")
 
+
 class D(B, C):
     pass
+
 
 # 16. Function Decorators
 def log_function_call(func):
     def wrapper():
         print("Function is being called")
         func()
+
     return wrapper
+
 
 @log_function_call
 def say_hello():
     print("Hello!")
+
 
 # 17. Class Decorators
 def add_greeting(cls):
     cls.greet = lambda self: "Hello from Decorator!"
     return cls
 
+
 @add_greeting
 class Person:
     pass
+
 
 # 18. Property Decorators: `@property`, `@setter`, and `@deleter`
 class Product:
@@ -181,6 +209,7 @@ class Product:
         print("Price deleted")
         del self._price
 
+
 # 19. `callable()` and `__call__()`
 class Multiplier:
     def __init__(self, factor):
@@ -189,13 +218,16 @@ class Multiplier:
     def __call__(self, x):
         return x * self.factor
 
+
 # 20. Creating a Custom Exception
 class InvalidAgeError(Exception):
     pass
 
+
 def check_age(age):
     if age < 18:
         raise InvalidAgeError("Age must be 18 or older.")
+
 
 # 21. Make a Custom Class Iterable
 class Countdown:
